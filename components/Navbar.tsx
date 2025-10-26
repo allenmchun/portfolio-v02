@@ -2,11 +2,12 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 const navItems = [
   { name: 'Home', href: '#home' },
   { name: 'About', href: '#about' },
-  { name: 'Skills', href: '#skills' },
+  { name: 'Skillset', href: '#skills' },
   { name: 'Contact', href: '#contact' },
 ]
 
@@ -35,20 +36,22 @@ export default function Navbar() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-lg' 
-          : 'bg-transparent'
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 bg-black text-white"
     >
-      <div className="container-max">
-        <div className="flex items-center justify-between h-16 px-4 sm:px-6 lg:px-8">
-          {/* Logo */}
+      <div className="container-max px-8 lg:px-16">
+        <div className="flex items-center justify-between h-20">
+          {/* Logo - Stylized "AC" */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-xl font-bold text-primary-600"
+            className="flex items-center"
           >
-            Portfolio
+            <Image
+              src="/images/logo_ac.png"
+              alt="AC Logo"
+              width={32}
+              height={32}
+              className="object-contain brightness-0 invert"
+            />
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -59,7 +62,7 @@ export default function Navbar() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => scrollToSection(item.href)}
-                className="text-gray-700 hover:text-primary-600 transition-colors duration-200 font-medium"
+                className="text-white hover:text-gray-300 transition-colors duration-200 font-medium"
               >
                 {item.name}
               </motion.button>
@@ -69,7 +72,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg text-gray-700 hover:text-primary-600 hover:bg-gray-100 transition-colors duration-200"
+            className="md:hidden p-2 rounded-lg text-white hover:text-gray-300 transition-colors duration-200"
           >
             <svg
               className="w-6 h-6"
@@ -102,14 +105,14 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden bg-white border-t border-gray-200"
+            className="md:hidden bg-black border-t border-gray-800"
           >
-            <div className="px-4 py-4 space-y-3">
+            <div className="px-8 py-6 space-y-4">
               {navItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left text-gray-700 hover:text-primary-600 hover:bg-gray-50 px-3 py-2 rounded-lg transition-colors duration-200 font-medium"
+                  className="block w-full text-left text-white hover:text-gray-300 px-4 py-3 rounded-lg transition-colors duration-200 font-medium"
                 >
                   {item.name}
                 </button>

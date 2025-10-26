@@ -7,14 +7,17 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    font-family: 'Inter', sans-serif;
   }
   
   body {
-    @apply bg-white text-gray-900 font-sans;
+    @apply font-sans;
+    font-family: 'Inter', sans-serif;
   }
   
   h1, h2, h3, h4, h5, h6 {
     @apply font-semibold tracking-tight;
+    font-family: 'Inter', sans-serif;
   }
 }
 
