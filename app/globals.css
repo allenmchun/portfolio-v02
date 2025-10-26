@@ -8,11 +8,13 @@
   html {
     scroll-behavior: smooth;
     font-family: 'Inter', sans-serif;
+    background-color: black;
   }
   
   body {
     @apply font-sans;
     font-family: 'Inter', sans-serif;
+    background-color: black;
   }
   
   h1, h2, h3, h4, h5, h6 {

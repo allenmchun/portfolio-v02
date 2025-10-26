@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import { Download } from 'lucide-react'
 
 export default function AboutSection() {
   const education = [
@@ -124,6 +125,25 @@ export default function AboutSection() {
                 ))}
               </div>
             </div>
+
+            {/* Resume Section */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-3xl font-normal mb-8">Resume</h3>
+              <a 
+                href="https://drive.google.com/file/d/1hl-8TEpNfcVBknBBOd-vQSFSQcLvTBBj/view?usp=share_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-3 text-xl text-gray-300 hover:text-white transition-colors duration-200 group"
+              >
+                <Download className="w-6 h-6 group-hover:scale-110 transition-transform duration-200" />
+                <span>Download Resume</span>
+              </a>
+            </motion.div>
           </motion.div>
         </div>
       </div>
