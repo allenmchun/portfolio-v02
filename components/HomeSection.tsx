@@ -31,7 +31,6 @@ export default function HomeSection() {
             This div sets a maximum width for its content and adjusts its left margin depending on whether the user's browser is Chrome.
             - If the browser is Chrome (isChrome is true), marginLeft is set to '48px'.
             - For all other browsers, marginLeft is set to '16px'.
-
             The numeric values 48 and 16 represent the space in pixels to the left of the div. This can help align content due to Chrome-specific rendering quirks or design preferences.
           */}
           <div className="max-w-6xl" style={{ marginLeft: isChrome ? '78px' : '16px' }}>
